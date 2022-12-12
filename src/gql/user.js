@@ -19,3 +19,28 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const GET_USER = gql`
+  query getUser($id: ID, $username: String) {
+    getUser(id: $id, username: $username) {
+      id
+      avatar
+      createdAt
+      email
+      description
+      name
+      password
+      siteWeb
+      username
+    }
+  }
+`;
+
+export const UPDATE_AVATAR = gql`
+  mutation UpdateAvatar($file: Upload) {
+    updateAvatar(file: $file) {
+      status
+      urlAvatar
+    }
+  }
+`;
